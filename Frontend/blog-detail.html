@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting… | Alpha Pack</title>
+    <link rel="icon" type="image/png" href="Assets/logo33.png">
+    <script>
+        (function () {
+            var map = {
+                'label-material': 'blog-label-material.html',
+                'sustainable-labeling': 'blog-sustainable-labeling.html',
+                'tamper-proof-labels': 'blog-tamper-proof-labels.html',
+                'color-accuracy': 'blog-color-accuracy.html',
+                'shrink-vs-stretch': 'blog-shrink-vs-stretch.html',
+                'barcode-best-practices': 'blog-barcode-best-practices.html',
+                'food-beverage': 'blog-food-beverage.html',
+                'cosmetics': 'blog-cosmetics.html',
+                'detergents': 'blog-detergents.html',
+                'pharmaceutical': 'blog-pharmaceutical.html',
+                'logistics': 'blog-logistics.html'
+            };
+            var h = (window.location.hash || '').replace(/^#/, '');
+            var target = map[h] || 'blog.html';
+            window.location.replace(target);
+        })();
+    </script>
+    <meta http-equiv="refresh" content="0;url=blog.html">
+</head>
+<body>
+    <p style="font-family: system-ui, sans-serif; padding: 2rem;">Redirecting… <a href="blog.html">Continue to blog</a> if nothing happens.</p>
+</body>
+</html>

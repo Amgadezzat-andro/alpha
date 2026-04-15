@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Alpha Pack</title>
+    <link rel="icon" type="image/png" href="Assets/logo33.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="Assets/logo33.png" alt="Alpha Pack Logo">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="products.html">Products <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="product-details.html#self-adhesive">Self-Adhesive Labels</a></li>
+                        <li><a href="product-details.html#barcode">Barcode Labels</a></li>
+                        <li><a href="product-details.html#tamper-proof">Tamper Proof Labels</a></li>
+                        <li><a href="product-details.html#shrink-sleeves">Shrink Sleeves</a></li>
+                        <li><a href="product-details.html#stretch-sleeves">Stretch Sleeves</a></li>
+                        <li><a href="product-details.html#in-mold">In-Mold Labels</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="nav-cta">Download Catalogue</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Products Hero -->
+    <section class="products-hero">
+        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Products" class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Products</span></div>
+            <h1>Our Product Range</h1>
+            <p>Premium quality labels and packaging solutions designed for your diverse business needs</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section products-section">
+        <div class="container">
+            <div class="section-intro" data-scroll="fade-up">
+                <h2>Explore Our Solutions</h2>
+                <p>From self-adhesive labels to innovative shrink sleeves and in-mold labels, we deliver reliable, high-quality solutions for every application. Each product is designed with precision and quality at every step.</p>
+            </div>
+
+            <!-- Product Filter -->
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="adhesive">Self-Adhesive</button>
+                <button class="filter-btn" data-filter="barcode">Barcode</button>
+                <button class="filter-btn" data-filter="tamper">Tamper Proof</button>
+                <button class="filter-btn" data-filter="sleeves">Sleeves</button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <div class="product-card" data-category="adhesive" data-scroll="fade-up">
+                    <div class="product-card-image">
+                        <img src="Assets/product/167101094915040.jpg" alt="Self-Adhesive Labels">
+                    </div>
+                    <div class="product-card-content">
+                        <h3>Self-Adhesive Labels</h3>
+                        <a href="product-details.html" class="learn-more">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="barcode" data-scroll="fade-up" data-scroll-delay="100">
+                    <div class="product-card-image">
+                        <img src="Assets/product/16710109704212.jpg" alt="Barcode Labels">
+                    </div>
+                    <div class="product-card-content">
+                        <h3>Barcode Labels</h3>
+                        <a href="product-details.html" class="learn-more">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="tamper" data-scroll="fade-up" data-scroll-delay="200">
+                    <div class="product-card-image">
+                        <img src="Assets/product/167101099231395.jpg" alt="Tamper Proof Labels">
+                    </div>
+                    <div class="product-card-content">
+                        <h3>Tamper Proof Labels</h3>
+                        <a href="product-details.html" class="learn-more">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sleeves" data-scroll="fade-up" data-scroll-delay="400">
+                    <div class="product-card-image">
+                        <img src="Assets/product/167101104424263.jpg" alt="Shrink Sleeves">
+                    </div>
+                    <div class="product-card-content">
+                        <h3>Shrink Sleeves</h3>
+                        <a href="product-details.html" class="learn-more">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sleeves" data-scroll="fade-up" data-scroll-delay="500">
+                    <div class="product-card-image">
+                        <img src="Assets/product/16710110633883.jpg" alt="Stretch Sleeves">
+                    </div>
+                    <div class="product-card-content">
+                        <h3>Stretch Sleeves</h3>
+                        <a href="product-details.html" class="learn-more">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sleeves" data-scroll="fade-up" data-scroll-delay="600">
+                    <div class="product-card-image">
+                        <img src="Assets/product/167101108126559.jpg" alt="In-Mold Labels">
+                    </div>
+                    <div class="product-card-content">
+                        <h3>In-Mold Labels</h3>
+                        <a href="product-details.html" class="learn-more">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section 1: Full Width Text -->
+    <section class="section content-section" data-scroll="fade-up" data-scroll-delay="200">
+        <div class="container">
+            <div class="content-text-full">
+                <h2>Why Choose Our Labels?</h2>
+                <p>With over 20 years of experience in the labeling industry, Alpha Pack has established itself as a trusted partner for businesses worldwide. We combine cutting-edge printing technology with superior materials to create labels that not only look exceptional but also perform reliably in demanding environments.</p>
+                <p>Our team of experts works closely with each client to understand their unique needs and deliver customized solutions that exceed expectations. From concept to production, we maintain the highest standards of quality and professionalism.</p>
+                <ul style="list-style: none; padding: 0; margin-top: 20px;">
+                    <li style="padding: 10px 0;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 12px;"></i> Premium quality materials</li>
+                    <li style="padding: 10px 0;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 12px;"></i> Advanced printing technology</li>
+                    <li style="padding: 10px 0;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 12px;"></i> Fast turnaround times</li>
+                    <li style="padding: 10px 0;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 12px;"></i> Competitive pricing</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Image Section 1 -->
+    <section class="section content-image-section" data-scroll="fade-up" data-scroll-delay="400">
+        <div class="content-image-full">
+            <img src="Assets/banner.jpg" alt="Why Choose Us">
+        </div>
+    </section>
+
+    <!-- Content Section 2: Full Width Text -->
+    <section class="section content-section" data-scroll="fade-up" data-scroll-delay="200">
+        <div class="container">
+            <div class="content-text-full">
+                <h2>Our Process</h2>
+                <p>At Alpha Pack, we follow a streamlined process to ensure every project is handled with precision and care. From initial consultation to final delivery, we maintain clear communication and attention to detail at every stage.</p>
+                <p>Our process includes design consultation, material selection, quality proofing, production, and quality assurance. We work with you every step of the way to ensure the final product meets or exceeds your expectations.</p>
+                <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                    <div style="background: var(--off-white); padding: 20px; border-radius: 8px;">
+                        <h4 style="color: var(--primary); margin-top: 0;">Fast Production</h4>
+                        <p style="font-size: 0.9rem; margin: 0;">5-7 business days standard</p>
+                    </div>
+                    <div style="background: var(--off-white); padding: 20px; border-radius: 8px;">
+                        <h4 style="color: var(--primary); margin-top: 0;">Quality Guarantee</h4>
+                        <p style="font-size: 0.9rem; margin: 0;">100% satisfaction guaranteed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Content Image Section 2 -->
+    <section class="section content-image-section" data-scroll="fade-up" data-scroll-delay="400">
+        <div class="content-image-full">
+            <img src="https://plus.unsplash.com/premium_photo-1661382011487-cd3d6b1d9dff?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Our Process">
+        </div>
+    </section>
+
+    <!-- Ask a Quote Form Section -->
+    <section class="section ask-quote-section" data-scroll="fade-up" data-scroll-delay="300">
+        <div style="padding: 0 60px;">
+            <h2 style="text-align: center; margin-bottom: 50px;">Ask a Quote</h2>
+            
+            <form class="quote-form" action="contact.html" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name <span style="color: red;">*</span></label>
+                        <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span style="color: red;">*</span></label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email <span style="color: red;">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company <span style="color: red;">*</span></label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="country">Country <span style="color: red;">*</span></label>
+                            <select id="country" name="country" required>
+                                <option value="">Select Country</option>
+                                <option value="USA">United States</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Germany">Germany</option>
+                                <option value="France">France</option>
+                                <option value="UAE">UAE</option>
+                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone <span style="color: red;">*</span></label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product">Product offered <span style="color: red;">*</span></label>
+                            <select id="product" name="product" required>
+                                <option value="">Select Product</option>
+                                <option value="self-adhesive">Self-Adhesive Labels</option>
+                                <option value="barcode">Barcode Labels</option>
+                                <option value="tamper-proof">Tamper Proof Labels</option>
+                                <option value="shrink-sleeves">Shrink Sleeves</option>
+                                <option value="stretch-sleeves">Stretch Sleeves</option>
+                                <option value="in-mold">In-Mold Labels</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantity <span style="color: red;">*</span></label>
+                            <input type="number" id="quantity" name="quantity" placeholder="Number of units" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label style="font-weight: 600; display: block; margin-bottom: 12px;">Upload file if it is up to 20 MB</label>
+                            <div class="file-upload">
+                                <input type="file" id="fileUpload" name="fileUpload" accept=".pdf,.ai,.eps,.psd,.png,.jpg,.jpeg">
+                                <label for="fileUpload" class="file-label">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span>Select Files</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us more about your project..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Submit Request</button>
+                        <button type="reset" class="btn btn-outline">Cancel</button>
+                    </div>
+                </form>
+        </div>
+    </section>
+
+
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2>Ready to get started?</h2>
+            <a href="contact.html" class="btn btn-primary">Download Catalogue</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Alpha Pack</h4>
+                    <p>Leading provider of premium packaging and labeling solutions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="product-details.html">Self-Adhesive Labels</a></li>
+                        <li><a href="product-details.html">Barcode Labels</a></li>
+                        <li><a href="product-details.html">Tamper Proof Labels</a></li>
+                        <li><a href="product-details.html">Shrink Sleeves</a></li>
+                        <li><a href="product-details.html">Stretch Sleeves</a></li>
+                        <li><a href="product-details.html">In-Mold Labels</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html">Our History</a></li>
+                        <li><a href="about.html">Testimonials</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get In Touch</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="contact.html">Email Us</a></li>
+                        <li><a href="contact.html">Call Us</a></li>
+                        <li><p>info@alphapack.com</p></li>
+                        <li><p>+1 (555) 123-4567</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Alpha Pack. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+ 
