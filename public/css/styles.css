@@ -868,7 +868,7 @@ img {
 
 /* ---------- CTA Section ---------- */
 .cta-section {
-    background: url('./../Assets/banner.jpg') center / cover no-repeat;
+    background: url('/frontend-static/Assets/banner.jpg') center / cover no-repeat;
     padding: 100px 0;
     text-align: center;
     position: relative;
@@ -3322,7 +3322,7 @@ img {
         margin-bottom: 24px;
         padding-bottom: 20px;
         border-bottom: 1px solid rgba(255,255,255,0.12);
-        background: url('../Assets/logo33.png') no-repeat center / contain;
+        background: url('/frontend-static/Assets/logo33.png') no-repeat center / contain;
         height: 52px;
         filter: brightness(10);
         flex-shrink: 0;

@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             FrontendMenuSeeder::class,
             AboutUsBmsSeeder::class,
+            BlogBannerSeeder::class,
+            BlogSeeder::class,
         ]);
     }
 }
