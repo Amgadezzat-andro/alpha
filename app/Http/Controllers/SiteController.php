@@ -6,6 +6,7 @@ use App\Filament\Resources\Bms\Model\Bms;
 use App\Filament\Resources\Button\Model\Button;
 use App\Filament\Resources\Page\Model\Page;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Schema;
 
 class SiteController extends Controller
 {
@@ -59,6 +60,12 @@ class SiteController extends Controller
 
     public function index($locale, $slug)
     {
+        $pageTable = (new Page())->getTable();
+
+        if (!Schema::hasTable($pageTable)) {
+            abort(404);
+        }
+
         $data['taregtPage'] = Cache::rememberForever($slug . "_page_" . (new Page())->getTable(), function () use ($slug) {
             return Page::onlyActive()
                 ->where('slug', $slug)
@@ -75,5 +82,32 @@ class SiteController extends Controller
         }
 
         abort(404);
+    }
+
+    public function aboutUs($lng)
+    {
+        $data['aboutHeader'] = Cache::rememberForever('about_us_header_bms', function () {
+            return Bms::activeWithCategory('about-us-header-section')->with(['mainImage', 'frontButtons'])->first();
+        });
+
+        $data['aboutWhoWeAre'] = Cache::rememberForever('about_us_who_we_are_bms', function () {
+            return Bms::activeWithCategory('about-us-who-we-are')->with(['mainImage', 'frontButtons'])->first();
+        });
+
+        $data['aboutHistoryCards'] = Cache::rememberForever('about_us_history_cards_bms', function () {
+            return Bms::activeWithCategory('about-us-our-history-cards')->with(['mainImage', 'frontButtons'])->get();
+        });
+
+        $data['aboutTestimonials'] = Cache::rememberForever('about_us_testimonials_bms', function () {
+            return Bms::activeWithCategory('about-us-testimonials')->with(['mainImage', 'frontButtons'])->get();
+        });
+
+        $data['aboutTerms'] = Cache::rememberForever('about_us_terms_bms', function () {
+            return Bms::activeWithCategory('about-us-terms-conditions')->with(['mainImage', 'frontButtons'])->first();
+        });
+
+        $data['lng'] = $lng;
+
+        return view('site.about-us', $data);
     }
 }

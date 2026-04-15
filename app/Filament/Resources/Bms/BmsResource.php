@@ -336,31 +336,6 @@ class BmsResource extends Resource
                                 //     ->validationMessages([
                                 //         'not_regex' => 'HTML is invalid',
                                 //     ]),
-                                Forms\Components\TextInput::make($tab->makeName('button_text'))
-                                    ->label(__("Button Text[" . $tab->getLocale() . "]"))
-                                    ->maxLength(1000)
-                                    // ->rows(6)
-                                    ->notRegex('/<[^b][^r][^>]*>/')
-                                    ->validationMessages([
-                                        'not_regex' => 'HTML is invalid',
-                                    ]),
-                                 Forms\Components\TextInput::make('code')
-                                    ->label('Code')
-                                    ->maxLength(1000)
-                                    // ->rows(6)
-                                    ->notRegex('/<[^b][^r][^>]*>/')
-                                    ->validationMessages([
-                                        'not_regex' => 'HTML is invalid',
-                                    ]),
-                                Forms\Components\TextInput::make('url')
-                                    ->label(__("Url"))
-                                    ->maxLength(255)
-                                    ->notRegex('/<[^b][^r][^>]*>/')
-                                    ->validationMessages([
-                                        'not_regex' => 'HTML is invalid',
-                                    ]),
-
-
                                 Forms\Components\TextInput::make('weight_order')
                                     ->label(__("Weight Order"))
                                     ->required()
@@ -447,14 +422,6 @@ class BmsResource extends Resource
                                         'not_regex' => 'HTML is invalid',
                                     ]),
 
-                                Forms\Components\Textarea::make($tab->makeName('button_text'))
-                                    ->label(__("Button Text[" . $tab->getLocale() . "]"))
-                                    ->maxLength(1000)
-                                    ->rows(6)
-                                    ->notRegex('/<[^b][^r][^>]*>/')
-                                    ->validationMessages([
-                                        'not_regex' => 'HTML is invalid',
-                                    ]),
                                 CustomCuratorPicker::make($tab->makeName("image_id"))
                                     ->label(__("Main Image[" . $tab->getLocale() . "]"))
                                     ->pathGenerator(DatePathGenerator::class)

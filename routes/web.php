@@ -35,10 +35,7 @@ Route::prefix('{locale}')
         Route::controller(\App\Http\Controllers\SiteController::class)
             ->group(function () {
                 Route::get('/', 'home')->name('home');
-                Route::get('/change-language', 'changeLanguage')->name('change-language');
-                Route::get('/about-us', 'aboutUs')->name('about-us');
-                Route::get('/services', 'services')->name('services');
-                Route::get('/culture', 'culture')->name('culture');
+                Route::get('/about', 'aboutUs')->name('about-us');
                 Route::get('/{slug}', 'index')->name('page-view');
 
             });
