@@ -20,7 +20,7 @@
                         <a href="{{ route('contact-us', $lng) }}" class="btn btn-outline">{{ __('Get a Quote') }}</a>
                     </div>
                 </div>
-                <a href="#stats-section" class="scroll-indicator">
+                <a href="#what-we-do" class="scroll-indicator">
                     <i class="fas fa-chevron-down"></i>
                 </a>
             </section>
@@ -64,7 +64,7 @@
 
         <!-- Products Section -->
         @if ($promotedProducts->count() > 0)
-            <section class="what-we-do section" id="products-section">
+            <section class="what-we-do section" id="what-we-do">
                 <div class="container">
                     <div class="section-header" data-scroll="fade-up">
                         <span class="section-tag">{{ __('What We Do') }}</span>
@@ -75,7 +75,8 @@
                     <div class="services-grid">
                         @forelse($promotedProducts as $product)
                             @php($primaryGalleryItem = $product->getResolvedGalleryItems()[0] ?? null)
-                            <div class="service-card" data-scroll="fade-up">
+                            <div class="service-card" data-scroll="fade-up"
+                                @if($loop->index > 0) data-scroll-delay="{{ $loop->index * 100 }}" @endif>
                                 <div class="product-card-image">
                                     @if ($primaryGalleryItem)
                                         <img src="{{ $primaryGalleryItem['url'] }}"
@@ -103,13 +104,14 @@
             <section class="blog section section-dark" id="blog">
                 <div class="container">
                     <div class="section-header" data-scroll="fade-up">
-                        <span class="section-tag">{{ __('Insights') }}</span>
+                        <span class="section-tag">{{ __('Blog') }}</span>
                         <h2>{{ __('Latest Articles') }}</h2>
                         <p>{{ __('Insights, tips, and industry knowledge from the world of labels and packaging.') }}</p>
                     </div>
                     <div class="industries-grid">
                         @foreach ($promotedBlogs as $blog)
-                            <div class="industry-card" data-scroll="fade-up">
+                            <div class="industry-card" data-scroll="fade-up"
+                                @if($loop->index > 0) data-scroll-delay="{{ $loop->index * 100 }}" @endif>
                                 @if ($blog->mainImage)
                                     <div class="industry-card-image">
                                         <img src="{{ asset('storage/' . ltrim($blog->mainImage->path, '/')) }}"
@@ -117,7 +119,6 @@
                                     </div>
                                 @endif
                                 <div class="industry-card-body">
-                                    <span class="blog-date">{{ $blog->published_at?->format('M d, Y') }}</span>
                                     <h3><a href="{{ route('blog-view', [$lng, $blog->slug]) }}">{{ $blog->title }}</a>
                                     </h3>
                                     <p>{{ Str::limit($blog->brief, 120) }}</p>
@@ -148,7 +149,8 @@
                     </div>
                     <div class="pain-grid">
                         @foreach ($whyLabelingEasy as $item)
-                            <div class="pain-card" data-scroll="fade-up">
+                            <div class="pain-card" data-scroll="fade-up"
+                                @if($loop->index > 0) data-scroll-delay="{{ $loop->index * 100 }}" @endif>
                                 <div class="pain-icon">
                                     <i class="fas fa-{{ $item->json_items[0]['icon'] ?? 'check' }}"></i>
                                 </div>
