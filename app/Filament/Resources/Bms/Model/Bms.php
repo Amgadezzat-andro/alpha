@@ -27,7 +27,8 @@ class Bms extends BaseTranslationModel
             // 'image_responsive_id',
             'button_text',
             'content',
-            'content2'
+            'content2',
+            'json_items'
         ];
 
     protected $fillable =
@@ -82,6 +83,10 @@ class Bms extends BaseTranslationModel
         return [
             //! Home PAGE
             'home-page-header-section' => __('Home Page Header Section'),
+            'home-page-stats-section' => __('Home Page Stats Section'),
+            'home-page-why-we-make-labling-easy-card'=> __('Home Page Why We Make Labeling Easy Section-card'),
+            'home-page-find-right-label'=> __('Home Page Find The Right Label For Your Project Section'),
+            'home-page-our-clients'=> __('Home Page Our Clients Section'),
 
 
             //!! About Us
@@ -111,6 +116,11 @@ class Bms extends BaseTranslationModel
         return [
             __('HomePage') => [
                 'home-page-header-section' => __('Home Page Header Section'),
+                'home-page-stats-section' => __('Home Page Stats Section'),
+                'home-page-why-we-make-labling-easy-card'=> __('Home Page Why We Make Labeling Easy Section-card'),
+                'home-page-find-right-label'=> __('Home Page Find The Right Label For Your Project Section'),
+                'home-page-our-clients'=> __('Home Page Our Clients Section'),
+
             ],
             __('About Us') => [
                 'about-us-header-section' => __('About Us Header Section'),

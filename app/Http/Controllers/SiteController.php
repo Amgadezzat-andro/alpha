@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Filament\Resources\Bms\Model\Bms;
+use App\Filament\Resources\Blog\Model\Blog;
 use App\Filament\Resources\Button\Model\Button;
 use App\Filament\Resources\Page\Model\Page;
+use App\Filament\Resources\Product\Model\Product;
+use App\Models\Media\Media;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Schema;
 
@@ -12,47 +15,50 @@ class SiteController extends Controller
 {
     public function home($lng)
     {
-        $data["slider"] = Cache::rememberForever("home_slider_bms", function () {
-            return Bms::activeWithCategory("home-page-slider")->with(['mainImage', 'frontButtons'])->get();
+        $data['header'] = Cache::rememberForever('home_header_bms', function () {
+            return Bms::activeWithCategory('home-page-header-section')->with(['mainImage'])->first();
         });
 
-        $data["aboutUs"] = Cache::rememberForever("home_about_us_bms", function () {
-            return Bms::activeWithCategory("home-page-about-us")->with(['mainImage', 'frontButtons'])->get();
+        $data['stats'] = Cache::rememberForever('home_stats_bms', function () {
+            return Bms::activeWithCategory('home-page-stats-section')->with(['mainImage'])->first();
         });
 
-        $data["servicesOverview"] = Cache::rememberForever("home_services_overview_bms", function () {
-            return Bms::activeWithCategory("home-page-services-overview")->with(['mainImage', 'frontButtons'])->first();
+        $data['promotedProducts'] = Cache::rememberForever('home_promoted_products', function () {
+            return Product::where('status', 1)
+                ->where('is_campaign', 1)
+                ->orderBy('weight_order', 'asc')
+                ->orderBy('published_at', 'desc')
+                ->limit(6)
+                ->get();
         });
 
-        $data["servicesCore"] = Cache::rememberForever("home_services_core_bms", function () {
-            return Bms::activeWithCategory("home-page-services-core")->with(['mainImage', 'frontButtons'])->first();
+        $data['promotedBlogs'] = Cache::rememberForever('home_promoted_blogs', function () {
+            return Blog::where('status', 1)
+                ->where('is_campaign', 1)
+                ->with(['mainImage'])
+                ->orderBy('weight_order', 'asc')
+                ->orderBy('published_at', 'desc')
+                ->limit(6)
+                ->get();
         });
 
-        $data["servicesIndustries"] = Cache::rememberForever("home_services_industries_bms", function () {
-            return Bms::activeWithCategory("home-page-services-industries")->with(['mainImage', 'frontButtons'])->first();
+        $data['whyLabelingEasy'] = Cache::rememberForever('home_why_labeling_easy', function () {
+            return Bms::activeWithCategory('home-page-why-we-make-labling-easy-card')->with(['mainImage'])->get();
         });
 
-        $data["cultureHowWeDo"] = Cache::rememberForever("home_culture_how_we_do_bms", function () {
-            return Bms::activeWithCategory("home-page-culture-how-we-do")->with(['mainImage', 'frontButtons'])->first();
+        $data['findRightLabel'] = Cache::rememberForever('home_find_right_label', function () {
+            return Bms::activeWithCategory('home-page-find-right-label')->with(['mainImage'])->first();
         });
 
-        $data["cultureRiseValues"] = Cache::rememberForever("home_culture_rise_values_bms", function () {
-            return Bms::activeWithCategory("home-page-culture-rise-values")->with(['mainImage', 'frontButtons'])->first();
+        $data['ourClients'] = Cache::rememberForever('home_our_clients', function () {
+            return Bms::activeWithCategory('home-page-our-clients')->with(['mainImage'])->first();
         });
 
-        $data["cultureEquityDriven"] = Cache::rememberForever("home_culture_equity_driven_bms", function () {
-            return Bms::activeWithCategory("home-page-culture-equity-drivin")->with(['mainImage', 'frontButtons'])->first();
-        });
+        $catalogueMediaId = setting("{$lng}.site.catalogue_file") ?: setting('site.catalogue_file');
+        $catalogueMedia = !empty($catalogueMediaId) ? Media::find($catalogueMediaId) : null;
+        $data['catalogueUrl'] = $catalogueMedia?->url;
 
-        $data["careers"] = Cache::rememberForever("home_careers_bms", function () {
-            return Bms::activeWithCategory("home-page-careers")->with(['mainImage', 'frontButtons'])->first();
-        });
-
-        $data["internship"] = Cache::rememberForever("home_internship_bms", function () {
-            return Bms::activeWithCategory("home-page-our-internship-program")->with(['mainImage', 'frontButtons'])->first();
-        });
-
-        $data["lng"] = $lng;
+        $data['lng'] = $lng;
         return view('site.home', $data);
     }
 

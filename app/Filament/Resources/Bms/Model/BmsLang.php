@@ -22,7 +22,12 @@ class BmsLang extends BaseLangModel
         // 'image_responsive_id',
         'button_text',
         'content',
-        'content2'
+        'content2',
+        'json_items'
+    ];
+
+    protected $casts = [
+        'json_items' => 'array',
     ];
 
 

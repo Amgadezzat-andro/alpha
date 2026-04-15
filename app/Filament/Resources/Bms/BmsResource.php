@@ -148,7 +148,38 @@ class BmsResource extends Resource
                                     ->toolbarSticky(true)
                                     ->profile('with-bootstrap'),
 
-
+                                Repeater::make($tab->makeName('json_items'))
+                                    ->label(__("Items[" . $tab->getLocale() . "]"))
+                                    ->collapsed()
+                                    ->addActionLabel(__('Add Item'))
+                                    ->itemLabel(function (array $state): ?string {
+                                        return $state['label_en']
+                                            ?? $state['title_en']
+                                            ?? $state['number']
+                                            ?? $state['icon']
+                                            ?? __('Item');
+                                    })
+                                    ->schema([
+                                        Forms\Components\TextInput::make('number')
+                                            ->label(__('Number'))
+                                            ->nullable(),
+                                        Forms\Components\TextInput::make('suffix')
+                                            ->label(__('Suffix'))
+                                            ->nullable(),
+                                        Forms\Components\TextInput::make('label_en')
+                                            ->label(__('Label'))
+                                            ->nullable(),
+                                        Forms\Components\TextInput::make('icon')
+                                            ->label(__('Icon'))
+                                            ->nullable(),
+                                        Forms\Components\TextInput::make('title_en')
+                                            ->label(__('Title'))
+                                            ->nullable(),
+                                        Forms\Components\Textarea::make('description_en')
+                                            ->label(__('Description'))
+                                            ->nullable(),
+                                    ])
+                                    ->columnSpanFull(),
 
                                 CustomCuratorPicker::make($tab->makeName("image_id"))
                                     ->label(__("Main Image[" . $tab->getLocale() . "]"))
