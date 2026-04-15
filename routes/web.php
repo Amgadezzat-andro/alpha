@@ -28,7 +28,7 @@ Route::prefix('{locale}')
             });
         Route::controller(\App\Http\Controllers\WebformsController::class)
             ->group(function () {
-                Route::get('/contact-us', 'contactUs')->name('contact-us');
+                Route::get('/contact', 'contactUs')->name('contact-us');
             });
 
 

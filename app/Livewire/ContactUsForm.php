@@ -74,6 +74,45 @@ class ContactUsForm extends BaseForm
             ];
     }
 
+    public function messages(): array
+    {
+        return [
+            'first_name.required' => 'Please enter your first name.',
+            'first_name.min' => 'First name must be at least 3 characters.',
+            'first_name.max' => 'First name is too long.',
+            'first_name.regex' => 'First name should contain letters only.',
+            'first_name.not_regex' => 'Please remove invalid characters from first name.',
+
+            'last_name.required' => 'Please enter your last name.',
+            'last_name.min' => 'Last name must be at least 3 characters.',
+            'last_name.max' => 'Last name is too long.',
+            'last_name.regex' => 'Last name should contain letters only.',
+            'last_name.not_regex' => 'Please remove invalid characters from last name.',
+
+            'email.required' => 'Please enter your email address.',
+            'email.email' => 'Please enter a valid email address.',
+            'email.max' => 'Email address is too long.',
+            'email.not_regex' => 'Please remove invalid characters from email.',
+
+            'phone.required' => 'Please enter your phone number.',
+            'phone.regex' => 'Please enter a valid Lebanese phone number (example: +961 70 123 456).',
+            'phone.not_regex' => 'Please remove invalid characters from phone number.',
+
+            'company.max' => 'Company name is too long.',
+            'company.not_regex' => 'Please remove invalid characters from company name.',
+
+            'product.required' => 'Please choose a product of interest.',
+            'product.in' => 'Please choose a valid product from the list.',
+            'product.min' => 'Please choose a valid product from the list.',
+            'product.max' => 'Product name is too long.',
+            'product.not_regex' => 'Please remove invalid characters from product.',
+
+            'message.min' => 'Message must be at least 3 characters when provided.',
+            'message.max' => 'Message is too long.',
+            'message.not_regex' => 'Please remove invalid characters from your message.',
+        ];
+    }
+
     public function render()
     {
         return view('livewire.contact-us-form');
