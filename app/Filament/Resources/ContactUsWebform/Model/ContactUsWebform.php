@@ -22,8 +22,7 @@ class ContactUsWebform extends BaseModelNotForAdmin
             'email',
             'phone',
             'company',
-            'position',
-            'location',
+            'product',
             'message',
         ];
 

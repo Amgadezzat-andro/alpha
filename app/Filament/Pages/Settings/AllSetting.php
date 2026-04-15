@@ -437,6 +437,21 @@ class AllSetting extends BaseSettings
 
                                         ])->columns(2),
 
+                                    Section::make('Catalogue Download')
+                                        ->collapsed()
+                                        ->schema([
+                                            CustomCuratorPicker::make($tab->makeName('site.catalogue_file'))
+                                                ->label(__("Catalogue File[" . $tab->getLocale() . "]"))
+                                                ->helperText(__('Upload the catalogue media file used on the Contact Us page download button.'))
+                                                ->pathGenerator(DatePathGenerator::class)
+                                                ->size(40)
+                                                ->color('primary')
+                                                ->outlined(true)
+                                                ->size('md')
+                                                ->constrained(true)
+                                                ->orderColumn('order'),
+                                        ])->columns(1),
+
 
                                 ]),
                         ]),
