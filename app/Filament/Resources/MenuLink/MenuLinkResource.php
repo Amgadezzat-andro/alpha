@@ -108,6 +108,16 @@ class MenuLinkResource extends Resource
                                         'not_regex' => 'HTML is invalid',
                                     ]),
 
+                                //custom_color_class
+                                Forms\Components\TextInput::make('custom_color_class')
+                                    ->label(__("Custom Color Class"))
+                                    ->maxLength(255)
+                                    ->notRegex('/<[^b][^r][^>]*>/')
+                                    ->validationMessages([
+                                        'not_regex' => 'HTML is invalid',
+
+
+                                    ]),
                             ]),
 
                         Section::make()
@@ -228,9 +238,9 @@ class MenuLinkResource extends Resource
 
             ->filters(
                 static::renderFilterActions([
-                    Tables\Filters\SelectFilter::make('category_id')
-                        ->label("Category")
-                        ->options(Menu::getCategoryList()),
+                    Tables\Filters\SelectFilter::make('menu_id')
+                        ->label("Menu")
+                        ->options(Menu::getAllList()),
                 ]),
             )
 

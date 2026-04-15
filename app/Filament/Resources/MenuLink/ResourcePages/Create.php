@@ -15,7 +15,7 @@ class Create extends CreateBase
 
     protected function getRedirectUrl(): string
     {
-        return $this->previousUrl ?? static::getParentResource()::getUrl('menu-link.index', [
+        return $this->previousUrl ?? static::getParentResource()::getUrl('menu-links.index', [
             'parent' => $this->parent,
         ]);
     }

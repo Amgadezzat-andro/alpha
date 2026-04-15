@@ -16,7 +16,7 @@ class Edit extends EditBase
 
     protected function getRedirectUrl(): string
     {
-        return $this->previousUrl ?? static::getParentResource()::getUrl('menu-link.index', [
+        return $this->previousUrl ?? static::getParentResource()::getUrl('menu-links.index', [
             'parent' => $this->parent,
         ]);
     }
@@ -26,7 +26,7 @@ class Edit extends EditBase
         $resource = static::getResource();
 
         $action->authorize($resource::canDelete($this->getRecord()))
-            ->successRedirectUrl(static::getParentResource()::getUrl('menu-link.index', [
+            ->successRedirectUrl(static::getParentResource()::getUrl('menu-links.index', [
                 'parent' => $this->parent,
             ]));
     }
