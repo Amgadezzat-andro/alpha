@@ -6,6 +6,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ---- Navbar Scroll Effect ----
     const navbar = document.getElementById('navbar');
+    function getNavbarOffset() {
+        if (!navbar) return 0;
+        return Math.ceil(navbar.getBoundingClientRect().height || 0);
+    }
+
+    function scrollToHashTarget(hash) {
+        if (!hash || hash === '#') return false;
+        let target;
+        try {
+            target = document.querySelector(hash);
+        } catch (e) {
+            return false;
+        }
+        if (!target) return false;
+
+        const offset = getNavbarOffset() + 12;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+        return true;
+    }
+
     function handleNavbarScroll() {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -130,13 +151,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (filterBtns.length) {
         // Select both service-card and product-card elements with data-category
         var allCards = document.querySelectorAll('.service-card[data-category], .product-card[data-category]');
-        
+
         filterBtns.forEach(function (btn) {
             btn.addEventListener('click', function () {
                 filterBtns.forEach(function (b) { b.classList.remove('active'); });
                 btn.classList.add('active');
                 var filter = btn.getAttribute('data-filter');
-                
+
                 allCards.forEach(function (card) {
                     if (filter === 'all' || card.getAttribute('data-category') === filter) {
                         card.classList.remove('filter-hidden');
@@ -178,13 +199,17 @@ document.addEventListener('DOMContentLoaded', function () {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            const target = document.querySelector(targetId);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            if (scrollToHashTarget(targetId)) e.preventDefault();
         });
     });
+
+    // ---- Smooth scroll when loading a page with a hash ----
+    if (window.location.hash) {
+        // Let layout settle (fonts/images) so offset is correct.
+        setTimeout(function () {
+            scrollToHashTarget(window.location.hash);
+        }, 50);
+    }
 
     // ---- Video fallback: show poster if video fails ----
     const heroVideo = document.getElementById('heroVideo');

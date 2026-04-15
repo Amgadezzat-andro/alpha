@@ -674,18 +674,15 @@ img {
 }
 
 .blog-detail-hero {
-    /*width: 100vw;*/
-    max-width: none;
+    width: 100%;
+    max-width: 100%;
     max-height: min(52vh, 520px);
     height: auto;
     min-height: 220px;
     object-fit: cover;
-    border-radius: 0;
-    margin-bottom: 28px;
+    border-radius: var(--radius);
+    margin: 0 auto 28px;
     display: block;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .blog-detail-content h2 {
@@ -871,7 +868,7 @@ img {
 
 /* ---------- CTA Section ---------- */
 .cta-section {
-    background: url('/frontend-static/Assets/banner.jpg') center / cover no-repeat;
+    background: url('./../Assets/banner.jpg') center / cover no-repeat;
     padding: 100px 0;
     text-align: center;
     position: relative;
@@ -3241,7 +3238,7 @@ img {
         margin-bottom: 24px;
         padding-bottom: 20px;
         border-bottom: 1px solid rgba(255,255,255,0.12);
-        background: url('/frontend-static/Assets/logo33.png') no-repeat center / contain;
+        background: url('../Assets/logo33.png') no-repeat center / contain;
         height: 52px;
         filter: brightness(10);
         flex-shrink: 0;

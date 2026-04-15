@@ -3,31 +3,372 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting… | Alpha Pack</title>
+    <title>Blog Details | Alpha Pack</title>
     <link rel="icon" type="image/png" href="Assets/logo33.png">
-    <script>
-        (function () {
-            var map = {
-                'label-material': 'blog-label-material.html',
-                'sustainable-labeling': 'blog-sustainable-labeling.html',
-                'tamper-proof-labels': 'blog-tamper-proof-labels.html',
-                'color-accuracy': 'blog-color-accuracy.html',
-                'shrink-vs-stretch': 'blog-shrink-vs-stretch.html',
-                'barcode-best-practices': 'blog-barcode-best-practices.html',
-                'food-beverage': 'blog-food-beverage.html',
-                'cosmetics': 'blog-cosmetics.html',
-                'detergents': 'blog-detergents.html',
-                'pharmaceutical': 'blog-pharmaceutical.html',
-                'logistics': 'blog-logistics.html'
-            };
-            var h = (window.location.hash || '').replace(/^#/, '');
-            var target = map[h] || 'blog.html';
-            window.location.replace(target);
-        })();
-    </script>
-    <meta http-equiv="refresh" content="0;url=blog.html">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p style="font-family: system-ui, sans-serif; padding: 2rem;">Redirecting… <a href="blog.html">Continue to blog</a> if nothing happens.</p>
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><img src="Assets/logo33.png" alt="Alpha Pack Logo"></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="products.html">Products <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="product-details.html#self-adhesive">Self-Adhesive Labels</a></li>
+                        <li><a href="product-details.html#barcode">Barcode Labels</a></li>
+                        <li><a href="product-details.html#tamper-proof">Tamper Proof Labels</a></li>
+                        <li><a href="product-details.html#shrink-sleeves">Shrink Sleeves</a></li>
+                        <li><a href="product-details.html#stretch-sleeves">Stretch Sleeves</a></li>
+                        <li><a href="product-details.html#in-mold">In-Mold Labels</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html#quote-form" class="nav-cta">Get a Quote</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80');">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <a href="blog.html">Blog</a> <span>/</span> <span>Details</span></div>
+            <h1>Blog Details</h1>
+            <p>Open any article and you’ll land directly on the right section.</p>
+        </div>
+    </section>
+
+    <main id="blogDetailsRoot"></main>
+
+    <script>
+        (function () {
+            var BLOG_POSTS = [
+                {
+                    id: 'food-beverage',
+                    dark: false,
+                    crumb: 'Food &amp; beverage',
+                    title: 'Food &amp; Beverage Labels',
+                    meta: 'About 4 min read · Industries',
+                    heroSrc: 'Assets/product/167101094915040.jpg',
+                    heroAlt: 'Food and beverage labels',
+                    contentHtml: [
+                        '<p>Food and beverage packs face moisture, grease, temperature swings, and repeated handling. Labels must stay legible for branding and mandatory information throughout the product lifecycle.</p>',
+                        '<h2>What we focus on</h2>',
+                        '<ul>',
+                        '<li>Moisture- and grease-resistant facestocks</li>',
+                        '<li>Adhesives suited to refrigerated, frozen, or ambient supply chains</li>',
+                        '<li>High-quality print for nutrition and regulatory text</li>',
+                        '<li>Formats from semi-gloss paper to PP films and shrink sleeves</li>',
+                        '</ul>',
+                        '<p>Whether you launch a new SKU or refresh an existing line, we align materials and finishes with your filling process and retail environment.</p>'
+                    ].join('')
+                },
+                {
+                    id: 'cosmetics',
+                    dark: true,
+                    crumb: 'Cosmetics',
+                    title: 'Cosmetics &amp; Personal Care Labels',
+                    meta: 'About 4 min read · Industries',
+                    heroSrc: 'Assets/product/167101099231395.jpg',
+                    heroAlt: 'Cosmetics labels',
+                    contentHtml: [
+                        '<p>Beauty and personal care packaging demands premium appearance and resistance to oils, creams, and humid bathrooms. Clear-on-clear and metallic finishes are popular for shelf differentiation.</p>',
+                        '<ul>',
+                        '<li>Durable materials with strong resistance to product ingredients</li>',
+                        '<li>Premium finishes aligned with brand positioning</li>',
+                        '<li>Clear and aluminum options for luxury “no-label” or metallic looks</li>',
+                        '</ul>',
+                        '<p>We support intricate designs and tight registration so your labels look as refined as the formula inside.</p>'
+                    ].join('')
+                },
+                {
+                    id: 'detergents',
+                    dark: false,
+                    crumb: 'Household',
+                    title: 'Detergents &amp; Household Products',
+                    meta: 'About 3 min read · Industries',
+                    heroSrc: 'Assets/product/167101104424263.jpg',
+                    heroAlt: 'Household product labels',
+                    contentHtml: [
+                        '<p>Cleaning products often use aggressive formulas and squeezable or rigid plastics. Labels must resist chemical exposure and mechanical stress.</p>',
+                        '<ul>',
+                        '<li>Chemical-resistant films and adhesives</li>',
+                        '<li>Strong bond to HDPE, PET, and other common household resins</li>',
+                        '<li>Stretch sleeve options for 360° branding on bottles</li>',
+                        '</ul>',
+                        '<p>We test recommendations against your container and use conditions so labels stay put in demanding home and industrial environments.</p>'
+                    ].join('')
+                },
+                {
+                    id: 'pharmaceutical',
+                    dark: true,
+                    crumb: 'Pharmaceutical',
+                    title: 'Pharmaceutical &amp; Healthcare Labels',
+                    meta: 'About 4 min read · Industries',
+                    heroSrc: 'Assets/product/16710109704212.jpg',
+                    heroAlt: 'Pharmaceutical labels',
+                    contentHtml: [
+                        '<p>Healthcare labeling must balance readability, security, and regulatory compliance. Small text, multi-language copy, and tamper features are common requirements.</p>',
+                        '<ul>',
+                        '<li>Crisp print for dosing and safety information</li>',
+                        '<li>Secure adhesives for vials, cartons, and devices</li>',
+                        '<li>Options for booklet or multi-page labels when content is extensive</li>',
+                        '<li>Tamper-evident features where required</li>',
+                        '</ul>',
+                        '<p>We treat pharma and healthcare projects with strict process control and documentation suitable for validated supply chains.</p>'
+                    ].join('')
+                },
+                {
+                    id: 'logistics',
+                    dark: false,
+                    crumb: 'Logistics',
+                    title: 'Logistics &amp; Industrial Labels',
+                    meta: 'About 4 min read · Industries',
+                    heroSrc: 'Assets/product/167101110424792.jpg',
+                    heroAlt: 'Industrial labels',
+                    contentHtml: [
+                        '<p>Asset tracking, warehousing, and harsh environments need labels that survive abrasion, UV, and chemicals while scanning reliably.</p>',
+                        '<ul>',
+                        '<li>Tear- and scratch-resistant materials</li>',
+                        '<li>Barcode and variable data printing for serialization and tracking</li>',
+                        '<li>Silver polyester and aluminum options for demanding conditions</li>',
+                        '<li>Custom sizes for pallets, racks, and equipment</li>',
+                        '</ul>',
+                        '<p>Share your durability targets and scan points—we’ll propose materials and print specs that hold up in the field.</p>'
+                    ].join('')
+                },
+                {
+                    id: 'label-material',
+                    dark: true,
+                    crumb: 'Label materials',
+                    title: 'How to Choose the Right Label Material',
+                    meta: 'About 4 min read · Materials',
+                    heroSrc: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=1200&q=80',
+                    heroAlt: 'Label rolls and materials',
+                    contentHtml: [
+                        '<p>Picking the correct facestock and adhesive is one of the most important decisions in packaging. The wrong combination can lead to edge lift, poor print reproduction, or failure in cold or humid conditions.</p>',
+                        '<h2>PP White</h2>',
+                        '<p>Polypropylene white film is the workhorse for many consumer goods. It offers excellent opacity for vibrant graphics, strong water resistance, and works well on plastics and glass.</p>',
+                        '<h2>PP Clear &amp; Clear-on-Clear</h2>',
+                        '<p>Clear films let the product show through for a minimalist or “premium no-label” look. Clear-on-Clear is ideal when both the label and container are transparent and you want a seamless appearance.</p>',
+                        '<h2>Aluminum</h2>',
+                        '<p>Metalized or aluminum-look labels deliver a technical or luxury feel and stand up to heat and chemicals—common in pharma, industrial, and specialty segments.</p>',
+                        '<p>At Alpha Pack, we help you match material to surface, storage conditions, and regulatory requirements so your labels perform from production to shelf.</p>'
+                    ].join('')
+                },
+                {
+                    id: 'sustainable-labeling',
+                    dark: false,
+                    crumb: 'Sustainability',
+                    title: 'Sustainable Labeling Solutions',
+                    meta: 'About 4 min read · Sustainability',
+                    heroSrc: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&q=80',
+                    heroAlt: 'Eco-friendly packaging',
+                    contentHtml: [
+                        '<p>Brands are under growing pressure to reduce waste and improve recyclability. Labels play a real role: the right construction can stay compatible with container recycling streams or reduce material use altogether.</p>',
+                        '<h2>Stretch sleeves</h2>',
+                        '<p>Stretch sleeves apply without adhesive over the full body of a container, which can simplify separation in some recycling processes and support bold 360° branding with fewer material layers.</p>',
+                        '<h2>Material choices</h2>',
+                        '<p>Thinner films, recyclable substrates, and designs that avoid conflicting layers all help lower environmental impact. We work with you to balance sustainability goals with durability and shelf appeal.</p>'
+                    ].join('')
+                },
+                {
+                    id: 'tamper-proof-labels',
+                    dark: true,
+                    crumb: 'Tamper evidence',
+                    title: 'Why Tamper-Proof Labels Matter',
+                    meta: 'About 3 min read · Security',
+                    heroSrc: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=1200&q=80',
+                    heroAlt: 'Secure pharmaceutical packaging',
+                    contentHtml: [
+                        '<p>Tamper-evident labels protect consumers and protect your brand. They make unauthorized opening visible at a glance and are widely used in food, supplements, cosmetics, and pharmaceuticals.</p>',
+                        '<ul>',
+                        '<li>Void messages when removed from the surface</li>',
+                        '<li>Break seals and perforations that cannot be realigned cleanly</li>',
+                        '<li>Specialized adhesives that fracture or delaminate on tampering</li>',
+                        '</ul>',
+                        '<p>Choosing the right tamper solution depends on the package shape, distribution environment, and regulatory expectations. We can recommend options that integrate cleanly with your existing artwork and filling lines.</p>'
+                    ].join('')
+                },
+                {
+                    id: 'color-accuracy',
+                    dark: false,
+                    crumb: 'Color',
+                    title: 'Color Accuracy in Label Printing',
+                    meta: 'About 4 min read · Prepress',
+                    heroSrc: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200&q=80',
+                    heroAlt: 'Color and design',
+                    contentHtml: [
+                        '<p>Consistent color builds recognition. Whether you use CMYK process builds or specified Pantone (PMS) colors, control through prepress and on press is essential.</p>',
+                        '<h2>CMYK</h2>',
+                        '<p>Four-color process is cost-effective for complex images and gradients. We calibrate presses and profile substrates so tones stay stable across runs.</p>',
+                        '<h2>Pantone matching</h2>',
+                        '<p>Spot colors are often used for logos and brand-critical hues. We match to specified swatches and validate under agreed lighting conditions where needed.</p>',
+                        '<p>Share your brand guidelines early— we’ll advise on achievable deltas and proofing steps before full production.</p>'
+                    ].join('')
+                },
+                {
+                    id: 'shrink-vs-stretch',
+                    dark: true,
+                    crumb: 'Sleeves',
+                    title: 'Shrink Sleeves vs Stretch Sleeves',
+                    meta: 'About 5 min read · Products',
+                    heroSrc: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=1200&q=80',
+                    heroAlt: 'Bottles and sleeves',
+                    contentHtml: [
+                        '<p>Both formats deliver 360° graphics and strong shelf presence, but they apply very differently.</p>',
+                        '<h2>Shrink sleeves</h2>',
+                        '<p>Heat shrinks a pre-printed film to conform tightly to the container. Excellent for unusual shapes and tamper bands over caps. Requires heat tunnels and careful artwork distortion compensation.</p>',
+                        '<h2>Stretch sleeves</h2>',
+                        '<p>Elastic films stretch over the pack without heat, which can suit temperature-sensitive products and certain line speeds. Great for full-body decoration where adhesive-free application is preferred.</p>',
+                        '<p>We help you compare total cost, line integration, and recyclability for your specific bottle and category.</p>'
+                    ].join('')
+                },
+                {
+                    id: 'barcode-best-practices',
+                    dark: false,
+                    crumb: 'Barcodes',
+                    title: 'Barcode Labels: Best Practices',
+                    meta: 'About 4 min read · Logistics',
+                    heroSrc: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80',
+                    heroAlt: 'Warehouse and scanning',
+                    contentHtml: [
+                        '<p>Reliable scanning depends on print quality, quiet zones, symbol size, and contrast—not just the correct number sequence.</p>',
+                        '<ul>',
+                        '<li>Maintain minimum bar width and height for your symbology (e.g. Code 128, EAN-13)</li>',
+                        '<li>Use high-contrast ink and substrate combinations</li>',
+                        '<li>Avoid placing codes over seams, corners, or areas prone to abrasion</li>',
+                        '<li>Test samples on the actual scanners used in retail or warehouses</li>',
+                        '</ul>',
+                        '<p>We optimize barcode placement in your layout and verify readability against common verification standards where required.</p>'
+                    ].join('')
+                }
+            ];
+
+            var root = document.getElementById('blogDetailsRoot');
+            if (!root) return;
+
+            function getSelectedId() {
+                return (window.location.hash || '').replace(/^#/, '');
+            }
+
+            function renderPostById(id) {
+                var post = null;
+                for (var i = 0; i < BLOG_POSTS.length; i++) {
+                    if (BLOG_POSTS[i].id === id) {
+                        post = BLOG_POSTS[i];
+                        break;
+                    }
+                }
+                if (!post) {
+                    post = BLOG_POSTS[0] || null;
+                }
+
+                if (!post) {
+                    root.innerHTML =
+                        '<section class="section">' +
+                            '<div class="container blog-detail-inner">' +
+                                '<h1>Blog post not found</h1>' +
+                                '<p class="blog-detail-meta">No blog posts are configured.</p>' +
+                                '<div class="blog-detail-actions">' +
+                                    '<a href="blog.html" class="btn btn-primary">Back to Blog</a>' +
+                                '</div>' +
+                            '</div>' +
+                        '</section>';
+                    return;
+                }
+
+                var sectionClass = 'section blog-detail-article' + (post.dark ? ' section-dark' : '');
+                root.innerHTML =
+                    '<article class="' + sectionClass + '" id="' + post.id + '">' +
+                        '<div class="container blog-detail-inner">' +
+                            '<div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <a href="blog.html">Blog</a> <span>/</span> <span>' + post.crumb + '</span></div>' +
+                            '<h1>' + post.title + '</h1>' +
+                            '<p class="blog-detail-meta"><i class="far fa-clock"></i> ' + post.meta + '</p>' +
+                            '<img class="blog-detail-hero" src="' + post.heroSrc + '" alt="' + post.heroAlt + '">' +
+                            '<div class="blog-detail-content">' + post.contentHtml + '</div>' +
+                            '<div class="blog-detail-actions">' +
+                                '<a href="contact.html#quote-form" class="btn btn-primary">Get a Quote</a>' +
+                                '<a href="blog.html" class="btn btn-outline">Back to Blog</a>' +
+                            '</div>' +
+                        '</div>' +
+                    '</article>';
+
+                document.title = post.title.replace(/&amp;/g, '&') + ' | Alpha Pack';
+            }
+
+            function renderFromHash() {
+                var selectedId = getSelectedId();
+                renderPostById(selectedId);
+            }
+
+            window.addEventListener('hashchange', renderFromHash);
+            renderFromHash();
+        })();
+    </script>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need Labels for Your Product?</h2>
+                <p>Tell us about your application and we’ll recommend materials, finishes, and formats.</p>
+                <a href="contact.html#quote-form" class="btn btn-primary btn-lg">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="Assets/logo33.png" alt="Alpha Pack" class="footer-logo">
+                    <p class="footer-tagline">Label It Right</p>
+                    <p>High-quality adhesive labels for food, retail, pharmaceutical, and industrial applications.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="product-details.html#self-adhesive">Self-Adhesive Labels</a></li>
+                        <li><a href="product-details.html#barcode">Barcode Labels</a></li>
+                        <li><a href="product-details.html#tamper-proof">Tamper Proof Labels</a></li>
+                        <li><a href="product-details.html#shrink-sleeves">Shrink Sleeves</a></li>
+                        <li><a href="product-details.html#stretch-sleeves">Stretch Sleeves</a></li>
+                        <li><a href="product-details.html#in-mold">In-Mold Labels</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html#history">Our History</a></li>
+                        <li><a href="about.html#testimonials">Testimonials</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html#terms">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get In Touch</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@alphapack.com">info@alphapack.com</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+123456789">+1 234 567 89</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Alpha Pack HQ</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Alpha Pack. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
