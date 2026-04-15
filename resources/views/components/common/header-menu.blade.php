@@ -13,25 +13,25 @@
         @endphp
 
         @if ($hasChildren)
-            <li class="nav-item dropdown {{ $isActive ? 'active' : '' }}">
-                <a {!! Utility::printAllUrl($item->link) !!}>
+            <li class="dropdown">
+                <a {!! \App\Classes\Utility::printAllUrl($item->link) !!} class="{{ trim(($item->custom_color_class ?? '') . ' ' . ($isActive ? 'active' : '')) }}">
                     {{ $item->title }} <i class="fas fa-chevron-down"></i>
                 </a>
-                <div class="dropdown-menu">
+                <ul class="dropdown-menu">
                     @foreach ($item->childs as $subItem)
                         @if (isset($subItem->childs) && $subItem->childs->count())
                             @foreach ($subItem->childs as $subSubItem)
-                                <a {!! Utility::printAllUrl($subSubItem->link) !!}>{{ $subSubItem->title }}</a>
+                                <li><a {!! \App\Classes\Utility::printAllUrl($subSubItem->link) !!}>{{ $subSubItem->title }}</a></li>
                             @endforeach
                         @else
-                            <a {!! Utility::printAllUrl($subItem->link) !!}>{{ $subItem->title }}</a>
+                            <li><a {!! \App\Classes\Utility::printAllUrl($subItem->link) !!}>{{ $subItem->title }}</a></li>
                         @endif
                     @endforeach
-                </div>
+                </ul>
             </li>
         @else
-            <li class="nav-item {{ $isActive ? 'active' : '' }}">
-                <a {!! Utility::printAllUrl($item->link) !!}>
+            <li>
+                <a {!! \App\Classes\Utility::printAllUrl($item->link) !!} class="{{ trim(($item->custom_color_class ?? '') . ' ' . ($isActive ? 'active' : '')) }}">
                     {{ $item->title }}
                 </a>
             </li>

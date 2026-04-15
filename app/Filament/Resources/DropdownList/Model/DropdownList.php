@@ -4,6 +4,7 @@ namespace App\Filament\Resources\DropdownList\Model;
 
 use App\Filament\Resources\AcademicAffairs\Model\AcademicAffairs;
 use App\Filament\Resources\Faq\Model\Faq;
+use App\Filament\Resources\Menu\Model\Menu;
 use App\Models\Base\BaseTranslationModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -58,6 +59,7 @@ class DropdownList extends BaseTranslationModel
 
 
     const NEWS_CATEGORY = 'News Category';
+    const Menu_CATEGORY = 'Menu Category';
     const BUTTON_CATEGORY = 'Button Category';
     // const Career_Position = 'Career Position';
 
@@ -83,7 +85,8 @@ class DropdownList extends BaseTranslationModel
 
 
                 self::BUTTON_CATEGORY => __('Button Category'),
-                self::NEWS_CATEGORY => __('News Category')
+                self::NEWS_CATEGORY => __('News Category'),
+                self::Menu_CATEGORY => __('Menu Category')
                 // self::Career_Position => __('Career Position'),
 
 
