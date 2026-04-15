@@ -3,7 +3,9 @@
 namespace App\Console\Commands;
 
 use App\Filament\Resources\Page\Model\Page;
+use App\Filament\Resources\Product\Model\Product;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Schema;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 
@@ -27,6 +29,19 @@ class GenerateSitemap extends Command
                     ->setPriority(1.0)
             );
 
+            if (Schema::hasTable((new Product())->getTable())) {
+                Product::active()
+                    ->chunk(1000, function ($items) use ($sitemap, $locale) {
+                        foreach ($items as $item) {
+                            $sitemap->add(
+                                Url::create(url("/$locale/products/{$item->slug}"))
+                                    ->setLastModificationDate($item->updated_at)
+                                    ->setPriority(0.8)
+                            );
+                        }
+                    });
+            }
+
             // Pages
             Page::active()
                 ->chunk(1000, function ($items) use ($sitemap, $locale) {
@@ -41,6 +56,7 @@ class GenerateSitemap extends Command
 
             // Static pages
             $staticRoutes = [
+                'products',
                 'the-firm',
                 'careers',
                 'internship',

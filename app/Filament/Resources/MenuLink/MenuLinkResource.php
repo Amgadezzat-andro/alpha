@@ -111,6 +111,10 @@ class MenuLinkResource extends Resource
                                 //custom_color_class
                                 Forms\Components\TextInput::make('custom_color_class')
                                     ->label(__("Custom Color Class"))
+                                    ->default('')
+                                    ->visible($tab->getLocale() === 'en')
+                                    ->dehydrated($tab->getLocale() === 'en')
+                                    ->dehydrateStateUsing(fn ($state) => $state ?? '')
                                     ->maxLength(255)
                                     ->notRegex('/<[^b][^r][^>]*>/')
                                     ->validationMessages([

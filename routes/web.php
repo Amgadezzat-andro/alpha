@@ -20,6 +20,13 @@ Route::prefix('{locale}')
         \App\Http\Middleware\SetLocale::class,
     ])
     ->group(function () {
+        Route::controller(\App\Http\Controllers\ProductController::class)
+            ->prefix('/products')
+            ->group(function () {
+                Route::get('/', 'index')->name('products-index');
+                Route::get('/{slug}', 'view')->name('products-view');
+            });
+
         Route::controller(\App\Http\Controllers\BlogController::class)
             ->prefix('/blog')
             ->group(function () {

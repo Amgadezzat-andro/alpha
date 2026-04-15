@@ -91,6 +91,11 @@ class Bms extends BaseTranslationModel
             'about-us-testimonials' => __('About Us Testimonials'),
             'about-us-terms-conditions' => __('About Us Terms & Conditions'),
 
+            //!! Proudcts
+            'products-index-banner' => __('Products Index Banner'),
+            'products-why-choose-us' => __('Products Why Choose Us Section'),
+            'products-our-process' => __('Products Our Process Section'),
+
             // !! BLOGS
             'blogs-index-banner' => __('Blogs Index Banner'),
 
@@ -113,6 +118,11 @@ class Bms extends BaseTranslationModel
                 'about-us-our-history-cards' => __('About Us Our History Card'),
                 'about-us-testimonials' => __('About Us Testimonials'),
                 'about-us-terms-conditions' => __('About Us Terms & Conditions'),
+            ],
+            __('Products') => [
+                'products-index-banner' => __('Products Index Banner'),
+                'products-why-choose-us' => __('Products Why Choose Us Section'),
+                'products-our-process' => __('Products Our Process Section'),
             ],
             __('Blogs') => [
                 'blogs-index-banner' => __('Blogs Index Banner'),
