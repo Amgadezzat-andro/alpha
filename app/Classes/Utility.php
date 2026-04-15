@@ -5,7 +5,6 @@ namespace App\Classes;
 use App\Filament\Resources\Blog\Model\Blog;
 use App\Filament\Resources\Doctor\Model\Doctor;
 use App\Filament\Resources\Hospital\Model\Hospital;
-use App\Filament\Resources\News\Model\News;
 use App\Filament\Resources\Page\Model\Page;
 use App\Filament\Resources\SpecializedCenter\Model\SpecializedCenter;
 use App\Mail\BaseEmail;
@@ -206,18 +205,6 @@ class Utility
                 "main_item_url"=>null,
                 "item_url"=>"page-view",
                 "pagination_name" => "page",
-            ],
-            [
-                "model" => News::class,
-                "title" => __("site.NEWS"),
-                "extra_search"=>[],
-                "item_title"=> "title",
-                "item_brief"=>"brief",
-                "item_img"=>"image_id",
-                "is_slug_url"=>true,
-                "main_item_url"=>null,
-                "item_url"=>"news-view",
-                "pagination_name" => "news",
             ],
 
         ];

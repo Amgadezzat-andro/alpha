@@ -49,7 +49,6 @@ class ListItems extends ListBase
             'Services' => 'fas-briefcase',
             'Careers' => 'fas-user-tie',
             'Internship' => 'fas-user-graduate',
-            'News' => 'fas-newspaper',
         ];
 
         $activeGroupKey = null;

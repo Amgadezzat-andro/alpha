@@ -26,13 +26,6 @@ Route::prefix('{locale}')
                 Route::get('/', 'index')->name('blog-index');
                 Route::get('/{slug}', 'view')->name('blog-view');
             });
-
-        Route::controller(\App\Http\Controllers\NewsController::class)
-            ->prefix('/news')
-            ->group(function () {
-                Route::get('/', 'index')->name('news-index');
-                Route::get('/{slug}', 'view')->name('news-view');
-            });
         Route::controller(\App\Http\Controllers\WebformsController::class)
             ->group(function () {
                 Route::get('/contact', 'contactUs')->name('contact-us');

@@ -63,12 +63,12 @@ class Importer extends ImportsImporter
             ImportColumn::make('path')
                 ->requiredMapping()
                 ->rules(['required', 'string', 'max:255'])
-                ->examples(['/news/news-1', '/news/news-2']),
+                ->examples(['/blog/example-post', '/about']),
 
             ImportColumn::make('model_type')
                 ->requiredMapping()
                 ->rules(['string', 'max:255'])
-                ->examples(['App\Models\News\News', 'App\Models\News\News']),
+                ->examples(['App\Filament\Resources\Blog\Model\Blog', 'App\Filament\Resources\Page\Model\Page']),
 
             ImportColumn::make('model_id')
                 ->requiredMapping()

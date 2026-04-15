@@ -56,17 +56,10 @@ class Blog extends BaseTranslationModel
 
     public static function getBlogCategoryList()
     {
-        $blogCategories = DropdownList::with('translations')->active()
+        return DropdownList::with('translations')->active()
             ->where('category', DropdownList::BLOG_CATEGORY)
-            ->get();
-
-        if ($blogCategories->isEmpty()) {
-            $blogCategories = DropdownList::with('translations')->active()
-                ->where('category', DropdownList::NEWS_CATEGORY)
-                ->get();
-        }
-
-        return $blogCategories->mapWithKeys(fn ($i) => [$i->id => $i->title]);
+            ->get()
+            ->mapWithKeys(fn ($i) => [$i->id => $i->title]);
     }
 
     public function mainImage()
