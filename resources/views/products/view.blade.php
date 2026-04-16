@@ -132,7 +132,7 @@
 </section>
 
 <section class="section ask-quote-section" data-scroll="fade-up" data-scroll-delay="300">
-    <div style="padding: 0 60px;">
+    <div class="ask-quote-inner">
         <h2 style="text-align: center; margin-bottom: 50px;">Ask a Quote</h2>
         <livewire:ask-quote-form />
     </div>

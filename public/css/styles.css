@@ -2512,6 +2512,10 @@ img {
     background: var(--off-white);
 }
 
+.ask-quote-inner {
+    padding: 0 60px;
+}
+
 .ask-quote-section h2 {
     font-size: 2.2rem;
     color: var(--primary);
@@ -2553,6 +2557,8 @@ img {
 .form-group input,
 .form-group select,
 .form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
     padding: 12px 16px;
     border: 1px solid #e0e0e0;
     border-radius: 6px;
@@ -2621,6 +2627,11 @@ img {
     margin-top: 32px;
     padding-top: 24px;
     border-top: 1px solid #f0f0f0;
+}
+
+.form-actions .btn {
+    width: 100%;
+    text-align: center;
 }
 
 .btn-outline {
@@ -3056,6 +3067,10 @@ img {
         padding: 24px;
     }
 
+    .ask-quote-inner {
+        padding: 0 24px;
+    }
+
     .file-label {
         padding: 30px;
     }
@@ -3182,6 +3197,10 @@ img {
 
     .ask-quote-section h2 {
         font-size: 1.5rem;
+    }
+
+    .ask-quote-inner {
+        padding: 0 16px;
     }
 
     .quote-form {
