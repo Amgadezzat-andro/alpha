@@ -1,10 +1,10 @@
 # ************************************************************
 # Antares - SQL Client
 # Version 0.7.34
-# 
+#
 # https://antares-sql.app/
 # https://github.com/antares-sql/antares
-# 
+#
 # Host: 127.0.0.1 ((Ubuntu) 8.0.45)
 # Database: alpha
 # Generation time: 2026-04-19T16:03:27+02:00
@@ -2082,23 +2082,23 @@ LOCK TABLES `settings` WRITE;
 /*!40000 ALTER TABLE `settings` DISABLE KEYS */;
 
 INSERT INTO `settings` (`id`, `key`, `value`, `created_at`, `updated_at`) VALUES
-	(262, "en.general.title", "Alpha Pack", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
-	(263, "en.general.description", "Stickers & Labels", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
-	(264, "en.general.keywords", "Alpha Pack Stickers & Labels", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
+  (262, "en.general.title", "\"Alpha Pack\"", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
+  (263, "en.general.description", "\"Stickers & Labels\"", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
+  (264, "en.general.keywords", "\"Alpha Pack Stickers & Labels\"", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
 	(265, "en.general.seo_image", 1, "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
-	(266, "general.date_format", "F d, Y", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
-	(267, "general.time_format", "g:i a", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
-	(268, "general.time_zone", "Asia/Amman", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
+  (266, "general.date_format", "\"F d, Y\"", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
+  (267, "general.time_format", "\"g:i a\"", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
+  (268, "general.time_zone", "\"Asia/Amman\"", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
 	(269, "general.google_site_verification", NULL, "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
-	(270, "general.filament_id", "admin", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
-	(271, "general.filament_path", "admin", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
+  (270, "general.filament_id", "\"admin\"", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
+  (271, "general.filament_path", "\"admin\"", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
 	(272, "general.google_recaptcha_site_key", NULL, "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
 	(273, "general.google_recaptcha_secret", NULL, "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
 	(274, "general.smtp_host", NULL, "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
 	(275, "general.smtp_port", NULL, "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
 	(276, "general.smtp_encryption", NULL, "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
-	(277, "general.smtp_username", "admin@test.com", "2026-04-15 10:54:11", "2026-04-15 18:27:10"),
-	(278, "general.smtp_password", "password123", "2026-04-15 10:54:11", "2026-04-15 18:27:10"),
+  (277, "general.smtp_username", "\"admin@test.com\"", "2026-04-15 10:54:11", "2026-04-15 18:27:10"),
+  (278, "general.smtp_password", "\"password123\"", "2026-04-15 10:54:11", "2026-04-15 18:27:10"),
 	(279, "general.google_analytics_code", NULL, "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
 	(280, "general.google_tag_code", NULL, "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
 	(281, "general.meta_pixel_code", NULL, "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
@@ -2106,16 +2106,16 @@ INSERT INTO `settings` (`id`, `key`, `value`, `created_at`, `updated_at`) VALUES
 	(283, "general.hotjar_code", NULL, "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
 	(284, "en.site.logo", 1, "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
 	(285, "en.site.icon", 1, "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
-	(286, "site.admin_panel_color", "#12a100", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
+  (286, "site.admin_panel_color", "\"#12a100\"", "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
 	(287, "en.site.footer_logo", 1, "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
 	(288, "site.contact_us_email_list", NULL, "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
-	(289, "site.phone", "+1 234 567 89", "2026-04-15 10:54:11", "2026-04-15 11:34:41"),
+  (289, "site.phone", "\"+1 234 567 89\"", "2026-04-15 10:54:11", "2026-04-15 11:34:41"),
 	(290, "site.fax", NULL, "2026-04-15 10:54:11", "2026-04-15 10:54:11"),
-	(291, "site.management_email", "info@alphapack.com", "2026-04-15 10:54:11", "2026-04-15 11:34:41"),
-	(292, "en.site.location", "Alpha Pack HQ Business District", "2026-04-15 10:54:11", "2026-04-15 11:34:41"),
-	(293, "site.location_url", "https://www.google.com/", "2026-04-15 10:54:11", "2026-04-15 11:34:41"),
-	(294, "site.location_coordinate", "31.969812,35.902513", "2026-04-15 10:54:11", "2026-04-15 11:34:41"),
-	(295, "site.business_hours", "Monday – Friday: 8:00 AM – 5:30 PM\nSaturday – Sunday: Closed", "2026-04-15 10:54:11", "2026-04-15 11:34:41"),
+  (291, "site.management_email", "\"info@alphapack.com\"", "2026-04-15 10:54:11", "2026-04-15 11:34:41"),
+  (292, "en.site.location", "\"Alpha Pack HQ Business District\"", "2026-04-15 10:54:11", "2026-04-15 11:34:41"),
+  (293, "site.location_url", "\"https://www.google.com/\"", "2026-04-15 10:54:11", "2026-04-15 11:34:41"),
+  (294, "site.location_coordinate", "\"31.969812,35.902513\"", "2026-04-15 10:54:11", "2026-04-15 11:34:41"),
+  (295, "site.business_hours", "\"Monday – Friday: 8:00 AM – 5:30 PM\\nSaturday – Sunday: Closed\"", "2026-04-15 10:54:11", "2026-04-15 11:34:41"),
 	(296, "en.site.catalogue_file", NULL, "2026-04-15 18:27:10", "2026-04-15 18:28:40");
 
 /*!40000 ALTER TABLE `settings` ENABLE KEYS */;
