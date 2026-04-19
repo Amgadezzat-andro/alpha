@@ -43,7 +43,7 @@ return [
     'is_limited_to_directory' => false,
     'is_tenant_aware' => true,
     'tenant_ownership_relationship_name' => 'tenant',
-    'max_size' => 52428800,
+    'max_size' => 51200, // 50MB in KB (used by Filament FileUpload maxSize())
     'model' => Media::class,
     'min_size' => 0,
     'path_generator' => null,
